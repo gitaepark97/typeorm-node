@@ -1,4 +1,5 @@
 import { createConnection } from 'typeorm'
+import { Client } from './entities/Client'
 
 const main = async () => {
   try {
@@ -9,6 +10,8 @@ const main = async () => {
       username: 'root',
       password: '',
       database: 'typeorm',
+      entities: [Client],
+      synchronize: true,
     })
     console.log('Connected to MariaDB')
   } catch (error) {

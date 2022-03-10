@@ -1,6 +1,7 @@
 import { createConnection } from 'typeorm'
 import { Banker } from './entities/Banker'
 import { Client } from './entities/Client'
+import { Transaction } from './entities/Transaction'
 
 const main = async () => {
   try {
@@ -9,9 +10,9 @@ const main = async () => {
       host: '127.0.0.1',
       port: 3306,
       username: 'root',
-      password: 'hgr30209!',
+      password: '',
       database: 'typeorm',
-      entities: [Client, Banker],
+      entities: [Client, Banker, Transaction],
       synchronize: true,
     })
     console.log('Connected to MariaDB')
